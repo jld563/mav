@@ -38,7 +38,7 @@ def pick_val(
     else:
         isPosFlag = 1
 
-
+    # Check if the data type of index is an integer
     if(dataType != 'int'):
         assert TypeError
 
