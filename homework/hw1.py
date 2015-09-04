@@ -3,7 +3,7 @@
 # ********************************
 # hw1.py -- Homework 1 assignment.
 # ********************************
-# This file must be named ``hw1.py``; none of the function names below are allowed
+# This file must be named hw1.py; none of the function names below are allowed
 # to change.
 #
 # Code skeleton
@@ -13,9 +13,9 @@ def pick_val(
   # The sequence to pick from.
   seq,
   #
-  # The index of the element to select, measured from the end of the list. That
-  # is, 1 refers to the last item in seq, 2 to the second item from the end,
-  # etc. This parameter defaults to the 4th from the end.
+  # The index of the element to select, measured from the end of the list. That is,
+  # 1 refers to the last item in seq, 2 to the second item from the end, etc.
+  # This parameter defaults to the 4th from the end.
   #
   # * If the sequence is shorter than 4 elements, select the third, second,
   #   first, or raise an IndexError exception if the sequence is empty.
@@ -23,17 +23,44 @@ def pick_val(
   #   index == -2 returns seq[2]. Again, if the list is less than index in
   #   length, return an earlier value.
   index=4):
-    # Check the length of the sequence with the asked index value
-    seqlength = len(seq)
-    myindex = index
-    # Generates a good index value if the passed value is too large.
-    if abs(myindex) > seqlength:
-        myindex = 0 - seqlength
-    # Uses the passed index value
+
+    # Dummy code -- replace this with your code.
+
+    # The variable size is used to keep track of the size of the list.
+    size = len(seq)
+    # The variable dataType is used to store the data type of index
+    dataType = type(index)
+    # The variable isPosFlag is essentiall a "flag" to tell if the index is positive or negative
+    isPosFlag = 0
+
+    if (index < 0 or index == -0):
+        isPosFlag = 0
     else:
-        myindex = 0 - index
-    value = seq[myindex]
-    return value
+        isPosFlag = 1
+
+
+    if(dataType != 'int'):
+        assert TypeError
+
+    if (isPosFlag):
+
+        if (size > index):
+            if ((size-index) > 0):
+                return seq[size-index]
+            else:
+                return seq[0]
+        elif IndexError:
+            assert IndexError
+
+        if (size == index):
+            return seq[-index]
+
+        if (size < index):
+            return seq[-size]
+
+    elif (isPosFlag == 0):
+        if (size > abs(index)):
+            return seq[abs(index)]
 
 # Tests
 # =====
